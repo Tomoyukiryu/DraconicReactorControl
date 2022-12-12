@@ -4,7 +4,7 @@
 
 #link to originale: https://github.com/acidjazz/demon
 
-#I only did some minor changes for it to work on 1.12.2 , I don't about later versions
+#I only did some minor changes for it to work on 1.12.2 , I don't know about newer versions
 
 #To install :
 1. get files drmon.lua and /lib/f
