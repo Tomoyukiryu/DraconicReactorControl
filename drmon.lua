@@ -57,7 +57,9 @@ end
 monX, monY = monitor.getSize()
 mon = {}
 mon.monitor,mon.X, mon.Y = monitor, monX, monY
-
+function is_charged(ri ,fieldPercent)
+return ri.status == "warming_up" and ri.temperature > 2000 and fieldPercent >= 50 	
+end
 --write settings to config file
 function save_config()
   sw = fs.open("config.txt", "w")   
@@ -185,7 +187,7 @@ function update()
     local statusColor
     statusColor = colors.red
 
-    if ri.status == "running"  then
+    if ri.status == "running" and is_charged(ri,math.ceil(ri.fieldStrength / ri.maxFieldStrength * 10000)*.01) then
       statusColor = colors.green
     elseif ri.status == "offline" then
       statusColor = colors.gray
@@ -269,7 +271,7 @@ function update()
     end
 
     -- are we charged? lets activate
-    if ri.status == "warming_up" and fieldPercent >= 50 and ri.temperature > 2000 and activateOnCharged == 1 then
+    if is_charged(ri,fieldPercent) and activateOnCharged == 1 then
       reactor.activateReactor()
     end
 
