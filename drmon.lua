@@ -187,7 +187,7 @@ function update()
     local statusColor
     statusColor = colors.red
 
-    if ri.status == "running" and is_charged(ri,math.ceil(ri.fieldStrength / ri.maxFieldStrength * 10000)*.01) then
+    if ri.status == "running" or is_charged(ri,math.ceil(ri.fieldStrength / ri.maxFieldStrength * 10000)*.01) then
       statusColor = colors.green
     elseif ri.status == "offline" then
       statusColor = colors.gray
