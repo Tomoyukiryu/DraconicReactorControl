@@ -2,7 +2,7 @@
 #Computercraft program for controlling Draconic Reactor
 #Originally by acidjazz 
 
-#link to originale: https://github.com/acidjazz/demon
+#link to originale: https://github.com/acidjazz/drmon
 
 #I only did some minor changes for it to work on 1.12.2 , I don't know about newer versions
 
