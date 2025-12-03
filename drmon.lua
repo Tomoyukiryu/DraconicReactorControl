@@ -34,7 +34,7 @@ local emergencyCharge = false
 local emergencyTemp = false
 
 monitor = f.periphSearch("monitor")
-inputfluxgate = f.periphSearch("flux_gate")
+inputfluxgate = f.periphSearch("flow_gate")
 fluxgate = peripheral.wrap(fluxgateSide)
 reactor = peripheral.wrap(reactorSide)
 
@@ -315,7 +315,7 @@ function update()
   end
 end
 
-end
 
 parallel.waitForAny(buttons, update)
+
 
